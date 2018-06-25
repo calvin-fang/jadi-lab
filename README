@@ -1,14 +1,16 @@
 Code for Jadi Lab Rotation
 Calvin Fang
 
-main_classifier_analysis.m is top level script to run spontaneous_lfp_state.m function 
+main_classifier_analysis top level script to run spontaneous_lfp_state for multiple iterations, original code for one computer
 
-main_classifier_parallel.m is top level script to run spontaneous_lfp_state_classifier_parallel.m for parallel jobs
+main_classifier_parallel top level script to run spontaneous_lfp_state_classifier_parallel for multiple iterations, optimized for parallel processing
 
-spontaneous_lfp_state.m is original function, meant to run on a single computer. Does random forest training 
+main_classifier_setup runs spontaneous_lfp_state_classifier_parallel_setup multiple times to setup for main_classifier_parallel
 
-spontaneous_lfp_state_classifier_parallel.m is similar function to the original, optimized for parallel jobs
+plot_error plots err from main_classifier_analysis
 
-spontaneous_lfp_state_classifier_parallel_setup.m is a function to be run to setup indices for spontaneous_lfp_state_classifier_parallel.m
+spontaneous_lfp_state is original function for one computer, runs random forest on lfp data labeled with behavioral state
 
-main_classifier_setup.m is script to run spontaneous_lfp_state_classifier_parallel_setup.m
+spontaneous_lfp_state_classifier_parallel is random forest function optimized for parallel processing
+
+spontaneous_lfp_state_classifier_parallel_setup is a function that creates training and test indices for parallel processing
